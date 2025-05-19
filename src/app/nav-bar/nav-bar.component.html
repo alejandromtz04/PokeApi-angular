@@ -1,0 +1,31 @@
+<aside [ngClass]="isCollapsed ? 'w-4rem' : 'w-16rem'" 
+       class="bg-blue-400 text-white p-3 shadow-2 transition-all duration-300 min-h-screen">
+
+  <!-- Toggle Button -->
+  <button (click)="toggleSidebar()" 
+        class="mb-4 p-button p-button-text w-full bg-blue-400 border-blue-400 shadow-1 border-1"
+        pTooltip="Toggle Menu">
+  <i class="pi pi-bars flex justify-content-center bg-blue" style="font-size: 1.5rem;"></i>
+</button>
+
+
+  <div *ngIf="!isCollapsed" class="text-center font-bold text-lg mb-4">PokeApp</div>
+
+  <!-- Navigation -->
+  <nav class="flex flex-column gap-3">
+    <a routerLink="/" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round">
+      <i class="pi pi-home"></i>
+      <span *ngIf="!isCollapsed">Home</span>
+    </a>
+
+    <a routerLink="/search" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round">
+      <i class="pi pi-search"></i>
+      <span *ngIf="!isCollapsed">Search</span>
+    </a>
+
+    <a routerLink="/settings" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round">
+      <i class="pi pi-cog"></i>
+      <span *ngIf="!isCollapsed">Settings</span>
+    </a>
+  </nav>
+</aside>

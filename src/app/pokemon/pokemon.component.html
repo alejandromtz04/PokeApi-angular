@@ -1,0 +1,14 @@
+<h2 class="flex justify-content-center flex-wrap font-bold text-blue-600 font-normal">Pokemon list</h2>
+
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div class="grid justify-content-center">
+  <div
+    *ngFor="let pokemon of pokemonList"
+    class="col-2 flex flex-row align-items-center justify-content-center bg-blue-400 border-round text-white font-bold p-4 m-3"
+    style="min-height: 100px; max-height: 300px; min-width: 100px; max-height: 300px;"
+  >
+    {{ pokemon.name }}
+  </div>
+</div>
