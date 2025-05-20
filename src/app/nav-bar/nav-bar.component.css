@@ -1,8 +1,49 @@
-:host {
-    display: block;
-    width: 16rem;
+/* Sidebar styles */
+/* component.css or global styles */
+.sidebar {
+  transition: width 0.3s ease;
 }
 
-.side-bar {
-    transition: width 0.3s ease-in-out;
+.sidebar.collapsed {
+  width: 4rem; /* 64px */
+}
+
+.sidebar.expanded {
+  width: 16rem; /* 256px */
+}
+
+/* Main content area */
+.main-layout {
+  overflow-x: hidden; /* Prevents horizontal scroll during transition */
+}
+
+.content {
+  margin-left: 16rem; /* Matches expanded sidebar width */
+  transition: margin-left 300ms ease;
+}
+
+.collapsed-sidebar ~ .content {
+  margin-left: 4rem; /* Matches collapsed sidebar width */
+}
+
+/* Pokemon grid adjustments */
+.pokemon-grid {
+  width: 100%;
+}
+
+.pokemon-card {
+  min-height: 100px;
+  background: #4299e1; /* bg-blue-400 */
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  transition: all 300ms ease;
+}
+
+.pokemon-card:hover {
+  background: #2b6cb0; /* hover:bg-blue-600 */
 }

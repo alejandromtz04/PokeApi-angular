@@ -1,26 +1,25 @@
-<aside [ngClass]="isCollapsed ? 'w-4rem' : 'w-16rem'"
-    class="side-bar bg-blue-400 text-white p-3 shadow-2 transition-all duration-300 min-h-screen">
+<aside [ngClass]="isCollapsed ? 'collapsed' : 'expanded'"
+   class="sidebar bg-blue-400 text-white p-3 shadow-2 transition-all transition-duration-300 min-h-screen flex-shrink-0 fixed top-0 left-0 z-4">
 
     <!-- Navigation -->
     <nav class="flex flex-column gap-3">
-
         <i (click)="toggleSidebar()"
-            class="pi pi-bars flex justify-content-center p-1 bg-blue hover:bg-blue-700 border-round"
+            class="pi pi-bars flex justify-content-center p-1 bg-blue-600 hover:bg-blue-700 border-round cursor-pointer"
             style="font-size: 1.5rem;"></i>
 
         <div *ngIf="!isCollapsed" class="text-center font-bold text-lg mb-4">PokeApp</div>
 
-        <a routerLink="/" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round">
+        <a routerLink="/" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round no-underline text-white">
             <i class="pi pi-home"></i>
             <span *ngIf="!isCollapsed">Home</span>
         </a>
 
-        <a routerLink="/search" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round">
+        <a class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round no-underline text-white">
             <i class="pi pi-search"></i>
             <span *ngIf="!isCollapsed">Search</span>
         </a>
 
-        <a routerLink="/settings" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round">
+        <a routerLink="/settings" class="flex align-items-center gap-2 p-2 hover:bg-blue-700 border-round no-underline text-white">
             <i class="pi pi-cog"></i>
             <span *ngIf="!isCollapsed">Settings</span>
         </a>
